@@ -5,7 +5,14 @@
 
 ---
 
-[TOC]
+- [0. Use Mendeley to manage citation](#0-use-mendeley-to-manage-citation)
+  * [Why Mendeley](#why-mendeley)
+  * [Use Mendeley](#use-mendeley)
+- [1. Field manipulation](#1-field-manipulation)
+- [2. Add Chinese entries](#2-add-chinese-entries)
+- [3. Add English entries](#3-add-english-entries)
+- [4. Update citeproc-js](#4-update-citeproc-js)
+- [5. Use the new style](#5-use-the-new-style)
 
 ## 0. Use Mendeley to manage citation
 
@@ -174,7 +181,7 @@ Now, your Mendeley is equipped with a newer CSL processor and it should be ready
 
 ![citation_styles](pictures/citation_styles.png)
 
-5.5 Now, download **chinese-legal-citation-style.csl** [here](chinese-legal-citation-style.csl) and move the downloaded csl file to the "citationStyles-1.0" folder you just open
+5.5 Now, download **chinese-legal-citation-style.csl** [here](https://github.com/gracewu42/Chinese-legal-citation-style/releases/download/1.0/chinese-legal-citation-style.csl) and move the downloaded csl file to the "citationStyles-1.0" folder you just open
 
 
 
