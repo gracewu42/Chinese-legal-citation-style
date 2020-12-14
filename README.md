@@ -205,5 +205,8 @@ To use it:
 
 ![Mendeley_word](pictures/Mendeley_word.png)
 
+- this style uses only footnotes and does not use bibliography/reference list. Using Mendeley to insert Bibliography will result in error for this citation style.
+- example footnotes:
+![example](pictures/example.png)
 
 
