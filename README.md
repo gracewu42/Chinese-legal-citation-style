@@ -1,6 +1,6 @@
 # Manual of legal citation(法学引注手册) in Mendeley
 
-- If you are already a frequent Mendeley user, you can skip part 0, 1, 2, 3, and read only part 4 & 5.
+- If you are already a frequent Mendeley user, you can skip part 0, 1, 3, and read only part 2.0, 4 & 5.
 - You can alway skip part 0 (it contains only personal notes)
 
 ---
