@@ -34,7 +34,7 @@
 
 ## 1. Field manipulation
 
-1.1 download Mendeley desktop [here](https://www.mendeley.com/download-desktop-new/)
+1.1 Download Mendeley desktop [here](https://www.mendeley.com/download-desktop-new/)
 
 1.2 Open Mendeley, from Mendeley desktop - **Tools**, click "install MS Word Plug-in"
 
@@ -44,7 +44,7 @@
 
 ![check_language](pictures/check_language.png)
 
-1.4 also check Chapter, Date Accessed, Day, Edition, Editors, Genre, Month, and Publisher, if they have not been checked. 
+1.4 Also check Chapter, Date Accessed, Day, Edition, Editors, Genre, Month, and Publisher, if they have not been checked. 
 
 ## 2. Add Chinese entries
 
