@@ -34,7 +34,7 @@
 
 ## 1. Field manipulation
 
-1.1 Download Mendeley desktop [here](https://www.mendeley.com/download-desktop-new/)
+1.1 Download and install Mendeley desktop from its official website [here](https://www.mendeley.com/download-desktop-new/)
 
 1.2 Open Mendeley, from Mendeley desktop - **Tools**, click "install MS Word Plug-in"
 
