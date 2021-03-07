@@ -1,25 +1,29 @@
+- [Manual of legal citation(法学引注手册) in Mendeley](#manual-of-legal-citation法学引注手册-in-mendeley)
+  - [0. Use Mendeley to manage citation](#0-use-mendeley-to-manage-citation)
+    - [Why Mendeley](#why-mendeley)
+    - [Use Mendeley](#use-mendeley)
+  - [1. Field manipulation](#1-field-manipulation)
+  - [2. Add Chinese entries](#2-add-chinese-entries)
+  - [3. Add English entries](#3-add-english-entries)
+  - [4. Update citeproc-js](#4-update-citeproc-js)
+    - [4.1 For macOS users](#41-for-macos-users)
+    - [4.2 For Windows users](#42-for-windows-users)
+  - [5. Download the Chinese-legal-citation-style to Mendeley](#5-download-the-chinese-legal-citation-style-to-mendeley)
+  - [6 Use the new style](#6-use-the-new-style)
+    - [To use it:](#to-use-it)
+    - [Change styles in Mendeley](#change-styles-in-mendeley)
+
 # Manual of legal citation(法学引注手册) in Mendeley
 
 - If you are already a frequent Mendeley user, you can skip part 0, 1, 3, and read only part 2.0, 4 & 5.
 - You can alway skip part 0 (it contains only personal notes)
-
----
-
-- [0. Use Mendeley to manage citation](#0-use-mendeley-to-manage-citation)
-  * [Why Mendeley](#why-mendeley)
-  * [Use Mendeley](#use-mendeley)
-- [1. Field manipulation](#1-field-manipulation)
-- [2. Add Chinese entries](#2-add-chinese-entries)
-- [3. Add English entries](#3-add-english-entries)
-- [4. Update citeproc-js](#4-update-citeproc-js)
-- [5. Use the new style](#5-use-the-new-style)
 
 ## 0. Use Mendeley to manage citation
 
 ### Why Mendeley
 
 - Mendeley是免费、跨平台的
-- 在现有的文献管理工具中，暂时没有包括《法学引注手册》体例的工具（网上有网友对一款国内的工具Noteexpress发起过[格式请求](http://www.inoteexpress.com/nesupport2/forum.php?mod=viewthread&tid=56778)，不知道Noteexpress是否已经更新，不过Noteexpress似乎不能在Mac上使用，所以不是一个可选项），因此需要自定义体例/customize style。由于《法学引注手册》体例需要囊括中英文，允许multilingual layout extension的免费工具只有Zotero的[Juris-M](https://forums.zotero.org/discussion/59837/combining-the-languages)，因为没有找到Juris-M自定义体例的方式，所以使用Mendeley来自定义体例。Mendeley使用的engine不支持multilingual layout，不过Juris-M的作者为Mendeley贡献了大量代码，两者engine有共通之处，通过一定的调整（第4部分所说的update citeproc-js）可以拿来用。
+- 在现有的文献管理工具中，暂时没有包括《法学引注手册》体例的工具（网上有网友对一款国内的工具NoteExpress发起过[格式请求](http://www.inoteexpress.com/nesupport2/forum.php?mod=viewthread&tid=56778)，不知道NoteExpress是否已经更新，不过NoteExpress似乎不能在Mac上使用，所以不是一个可选项），因此需要自定义体例/customize style。由于《法学引注手册》体例需要囊括中英文，允许multilingual layout extension的免费工具只有Zotero的[Juris-M](https://forums.zotero.org/discussion/59837/combining-the-languages)，因为没有找到Juris-M自定义体例的方式，所以使用Mendeley来自定义体例。Mendeley使用的engine不支持multilingual layout，不过Juris-M的作者为Mendeley贡献了大量代码，两者engine有共通之处，通过一定的调整（第4部分所说的update citeproc-js）可以拿来用。
 
 ### Use Mendeley
 
@@ -107,7 +111,7 @@ That is important and that can be done in a quicker way if you already have a lo
 
 3.1 Find the DOI of your document
 
-- DOI looks like this: 10.1177/0887403412461501
+- DOI may look like this: `10.1177/0887403412461501`
 - DOI can be found on the first page of the article
 - If DOI cannot be found on the first page, use [this website](https://search.crossref.org) and enter the title of your article to search for the DOI
 
@@ -123,85 +127,66 @@ That is important and that can be done in a quicker way if you already have a lo
 
 ## 4. Update citeproc-js
 
-Mendeley uses [citeproc-js](https://github.com/Juris-M/citeproc-js) as its [Citation Style Language](https://github.com/citation-style-language/test-suite) (CSL) [processor](https://citationstyles.org/developers/#csl-processors) to produce fotmatted citations. However, the current version of `citeproc-js` in the latest Mendeley (as of today, `v1.19.5`) is `1.1.210` . This version lacks the support for `multi-layout`, which is an element defined in [CSL-M](https://citeproc-js.readthedocs.io/en/latest/csl-m/index.html#cs-layout-extension) (an extension to CSL) and is the key to enable Mendeley to generate citations with styles based on languages. Therefore, we need to mannually update the CSL processor built-in with Mendeley.
+Mendeley uses [citeproc-js](https://github.com/Juris-M/citeproc-js) as its [Citation Style Language](https://github.com/citation-style-language/test-suite) (CSL) [processor](https://citationstyles.org/developers/#csl-processors) to produce fotmatted citations. However, the current version of `citeproc-js` in the latest Mendeley (as of today, `v1.19.8`) is `1.1.210` . This version lacks the support for `multi-layout`, which is an element defined in [CSL-M](https://citeproc-js.readthedocs.io/en/latest/csl-m/index.html#cs-layout-extension) (an extension to CSL) and is the key to enable Mendeley to generate citations with styles based on language. Therefore, we need to mannually update the CSL processor built-in with Mendeley to version `1.1.242` (the last one that can work with Mendeley).
 
-4.1 For macOS users, use Finder to visit your Applications folder.
+### 4.1 For macOS users
+
+4.1.1 Use Finder to visit your Applications folder.
 
 ![Finder_Go_Applications](pictures/Finder_Go_Applications.png)
 
-4.2 Then locate your Mendeley Desktop app, right click it, and choose "Show Package Contents" to view its internal files.
+4.1.2 Then locate your Mendeley Desktop app, right click it, and choose "Show Package Contents" to view its internal files.
 
 ![Mendeley_ShowContents](pictures/Mendeley_ShowContents.png)
 
-4.3 Under the folder named "Contents", and under the sub-folder "Resources", you'll find a folder named "citeproc-js" **(double click "Contents" - "Resources" - "citeproc-js" - "src")**. This is where Mendeley put its CSL processor. In that folder, there is a file named `mendeley-combined.js`. We are going to modify this file, so feel free to make a copy of it as a backup (right click the file - duplicate - rename the copy; the example below made a copy with a name suffix "original").
+4.1.3 Under the folder named "Contents", and under the sub-folder "Resources", you'll find a folder named "citeproc-js" **(double click "Contents" - "Resources" - "citeproc-js" - "src")**. This is where Mendeley put its CSL processor. In that folder, there is a file named `mendeley-combined.js`. We are going to modify this file, so feel free to make a copy of it as a backup (right click the file - duplicate - rename the copy; the example below made a copy with a name suffix "original").
 
 ![Resouces_citeproc-js](pictures/Resouces_citeproc-js.png)
 
-4.4 Now, download the latest  `citeproc-js` that can work with Mendeley here: [citeproc-js-1.1.242.zip](https://github.com/Juris-M/citeproc-js/releases/tag/1.1.242). Uncompress the downloaded file, and open the folder, you'll see a file named `citeproc.js`. 
+4.1.4 You can download the modified `mendeley-combined.js` from [here](https://github.com/gracewu42/Chinese-legal-citation-style/releases/download/2.0/mendeley-combined.js) and use it to replace the built-in one. Alternatively, if you have security concerns, you may follow the instructions in [modify_mendeley-combined_by_yourself.md](modify_mendeley-combined_by_yourself.md) to use the official version of `citeproc-js` to modify the file.
 
-![citeproc-js-1.1.242](pictures/citeproc-js-1.1.242.png)
+### 4.2 For Windows users
 
-Open this file with TextEdit or any editor app you might have, and **copy all** the text inside it.
+4.2.1 Find the location of the built-in `citeproc-js`. For typical installation, you should be able to find a folder named `src` under `C:\Program Files (x86)\Mendeley Desktop\citeproc-js\`. If you cannot find it, it is likely that Mendeley was installed in another hard drive (as shown in the picture below). In this `src` folder, there is a file named `mendeley-combined.js`. We are going to modify this file, so feel free to make a copy of it as a backup (in the example picture below, a copy with a name suffix "original" has been made).
 
-![citeproc_js_contents](pictures/citeproc_js_contents.png)
+![Windows_Mendeley_Folder](pictures/Windows_Mendeley_Folder.png)
 
-4.5 Now, back to the file  `mendeley-combined.js`. Again, open it, search for the word "CryptoJS" and you'll find something looks like this:
+4.2.2 You can download the modified `mendeley-combined.js` from [here](https://github.com/gracewu42/Chinese-legal-citation-style/releases/download/2.0/mendeley-combined.js) and replace the built-in one. Alternatively, if you have security concerns, you may follow the instructions in [modify_mendeley-combined_by_yourself.md](modify_mendeley-combined_by_yourself.md) to use the official version of `citeproc-js` to modify the file.
 
-![Search_CryptoJS](pictures/Search_CryptoJS.png)
-
-Everything above it (as shown in the code block below), is the old CSL processor. Everything below it and including itself is some customization that Mendeley made and shouldn't be touched. 
-
-```
-/*
-CryptoJS v3.1.2
-......
-```
-
-We need to delete everything above it (more specifically, delete everything above Line 17566) and paste what we just copied into there, and save the file. 
+---
 
 Now, your Mendeley is equipped with a newer CSL processor and it should be ready to use it. If you run into any problems, quit Mendeley and restart it. If you run into persistent issues, you can always delete `mendeley-combined.js` and renamed your backup file back to `mendeley-combined.js` to rollback to the original state.
 
 
+## 5. Download the Chinese-legal-citation-style to Mendeley
 
-## 5. Use the new style
+5.1 In Mendeley, click `View` in the menu bar and select `Citation Style` and select `More Styles`
 
-5.1 For macOS users, use Finder and click Go - "Go to Folder."
+![Mendeley_More_Styles](pictures/Mendeley_More_Styles.png)
 
-![go_to_folder](pictures/go_to_folder.png)
+5.2 A new window will show up and you'll be able to `Get More Styles`. Copy and paste the following link into the text box in the bottom of the window:
 
-5.2 Under "Go to the folder," enter `~/Library/Application Support`
+[https://github.com/gracewu42/Chinese-legal-citation-style/releases/download/2.0/chinese-legal-citation-style.csl](https://github.com/gracewu42/Chinese-legal-citation-style/releases/download/2.0/chinese-legal-citation-style.csl)
 
-![app_support](pictures/app_support.png)
+and click the `Download` button on the right.
 
-5.3 Under "Application Support," double click to open"Mendeley desktop"
+![Mendeley_Download_Style](pictures/Mendeley_Download_Style.png)
 
-![app_support_Mendeley](pictures/app_support_Mendeley.png)
+5.3 Mendeley will automatically download the style and select it as the default style.
 
-5.4 Under "Mendeley desktop," double click to open "citationStyles-1.0"
-
-![citation_styles](pictures/citation_styles.png)
-
-5.5 Now, download **chinese-legal-citation-style.csl** [here](https://github.com/gracewu42/Chinese-legal-citation-style/releases/download/1.0/chinese-legal-citation-style.csl) and move the downloaded csl file to the "citationStyles-1.0" folder you just open
-
-
-
-Now you should be able to use this style in Mendeley and its Word Plug-in.
+![](pictures/Mendeley_Style_Downloaded.png)
 
 ---
 
+Now you should be able to use this style in Mendeley and its Word Plug-in.
 
+## 6 Use the new style
 
-To use it:
+### To use it:
 
-- restart Mendeley, from Mendeley desktop - View - Citation Style, click "More styles"
+- [1] You can directly right-click an article in Mendeley and select `Copy As -> Formatted Citation`. Then, you will be able to paste the formatted citation into Word (with `Keep Source Formatting`, all italics will show up correctly).
 
-![more_styles](pictures/more_styles.png)
-
-- you should be able to see "chinese-legal-citation-style" and click "Use this style," click "done"
-
-![use_this_style](pictures/use_this_style.png)
-
-- in your Word document, you should be able to insert citation in this style and switch between styles very easily
+- [2] In your Word document, you should be able to insert citation in this style and switch between styles very easily
 
 ![Mendeley_word](pictures/Mendeley_word.png)
 
@@ -209,4 +194,12 @@ To use it:
 - example footnotes:
 ![example](pictures/example.png)
 
+### Change styles in Mendeley
 
+- from Mendeley desktop - View - Citation Style, click "More styles"
+
+![more_styles](pictures/more_styles.png)
+
+- you should be able to see "chinese-legal-citation-style" and click "Use this style," click "done"
+
+![use_this_style](pictures/use_this_style.png)
