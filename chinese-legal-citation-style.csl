@@ -46,7 +46,7 @@
   </macro>
   <macro name="name-short-macro">
     <names variable="author">
-      <name form="short" and="symbol" delimiter=", "/>
+      <name form="short" and="symbol" delimiter=", " delimiter-precedes-last="never"/>
       <label form="verb-short" prefix=", "/>
       <substitute>
         <text variable="title" form="short"/>
