@@ -283,8 +283,8 @@
     <layout locale="zh-CN" delimiter="；" suffix="。">
       <choose>
         <if position="ibid">
-          <text value="id." text-case="capitalize-first" font-style="italic"/>
-          <text macro="at_page" suffix="."/>
+          <text value="同前注" text-case="capitalize-first" font-style="italic"/>
+          <text macro="at_page" suffix="。"/>
           <!-- period will not show up - this is for find-and-replace later. -->
         </if>
         <else-if position="subsequent">
